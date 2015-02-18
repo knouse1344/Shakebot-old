@@ -88,7 +88,7 @@ require '../classes/classes.php'; ?>
 	});
 </script>
 
-<div class="row marginRow">
+<div class="row">
 	<div class="small-12 small-centered columns">
 	<h1>My Profile</h1>
 	

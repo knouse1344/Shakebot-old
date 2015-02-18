@@ -147,10 +147,9 @@ border-left:1px solid #ddd;
 }
 
 .tiles {
-list-style: none;
-margin: auto;
-float: right;
-
+	list-style: none;
+	margin: auto;
+	width: 100%;
 }
 
 .tiles li {
@@ -180,48 +179,48 @@ transition:none;
 -webkit-transition:none;
 }
 
-.tileContainer .edit {
-	float: right;
-margin-right: 10px;
-color: #000;
-display:none;
-cursor:pointer;
-}
-
 .tileContainer .tile {
-width: 100px;
-height: 126px;
-width: 100px;
-display: inline-block;
-color:#fff;
-text-shadow:1px 1px 2px #333;
-padding: 5px;
-border: 2px solid transparent;
-overflow: hidden;
-float:left;
-margin-top: 4px;
-}
-
-/*
-.tileContainer .tile:hover {
-	border:2px solid #333;
-}
-*/
-
-.tile .delete {
 	position: relative;
-float: right;
-background: #ED2323;
-margin-right: -7px;
-margin-top: -7px;
-padding: 2px 10px;
-right: 0px;
-display:none;
-cursor:pointer;
+	display: inline-block;
+	color:#aaa;
+	padding: 5px;
+	border: 2px solid transparent;
+	overflow: hidden;
+	float:left;
 }
 
-.tile .delete:hover {
 
+.tile i.edit, .tile i.delete {
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #aaa;
+	padding: 5px;
+	line-height: 1em;
+	font-size: 1em;
+	opacity: 0;
+	cursor:pointer;
+	z-index: 500;
+}
+
+.tile i.edit {
+	right: 30px;
+}
+
+.tile i.delete {
+
+}
+
+.tile:hover .tileIcon, .tile:hover .tileTitle {
+	color: #333;
+}
+
+.tile:hover > i.edit, .tile:hover > i.delete {
+	opacity: 1;
+}
+
+.tile .delete:hover, .tile .edit:hover {
+	color: #000;
 }
 
 .tile a {
@@ -230,10 +229,6 @@ text-shadow:1px 1px 2px #333;
 height: 100%;
 width: 100%;
 display: inline;	
-}
-
-.tile.wide {
-	width:215px;
 }
 
 .tile.orange {
@@ -400,10 +395,10 @@ margin-right: 10px;
 
 .cover-photo h2 {
 	font-size: 22px;
-position: relative;
-display: inline;
-color: #fff;
-text-shadow: 0px 0px 2px #000;
+	position: relative;
+	display: inline;
+	color: #000;
+	font-weight: bold;
 }
 
 .avatar-container {
@@ -758,10 +753,7 @@ display:none;
 }
 
 .tileBottom {
-/*
-	padding-bottom: 29px;
-	*/
-	height: 117;
+	
 }
 
 #rightclick {
@@ -786,26 +778,16 @@ margin-bottom: -65px;
 }
 
 .tileTitle {
+	margin-top: 1em;
 	display: block;
-position: absolute;
-bottom: 0px;
-
+	text-align: center;
 }
 
 .tileIcon {
-
-display: block;
-font-size: 48px;
-margin: auto;
-text-align: center;
-width: 85px;
-padding-top: 15px;
-position: absolute;
-padding-top: 35px;
-}
-
-.tile.wide .tileIcon {
-	width: 195px;
+	display: block;
+	font-size: 2em;
+	margin: auto;
+	text-align: center;
 }
 
 .row {
@@ -916,7 +898,7 @@ height: 128px;
 
 .headerActivities {
 	margin-left: 130px;
-color: #fff;
+	color: #000;
 }
 
 .fullLogo {
@@ -1244,6 +1226,9 @@ p.disclaimer {
 	margin-bottom: 0;
 }
 
+.main-section {
+	padding-top: 3em;
+}
 
 
 

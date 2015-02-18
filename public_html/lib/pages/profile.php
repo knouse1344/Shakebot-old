@@ -9,17 +9,7 @@ $(document).ready(function(){
 
 
 	var subpage = location.hash.split('/');
-	
 
-	$('.tile').on('mouseenter', function(){
-		$(this).find('.delete').fadeIn('fast');
-		$(this).find('.edit').fadeIn('fast');
-	});
-
-	$('.tile').on('mouseleave', function(){
-		$(this).find('.delete').fadeOut('fast');
-		$(this).find('.edit').fadeOut('fast');
-	});
 
 	$(document).on('click', '.delete', function(){
 		$(this).parent().slideUp(function(){
@@ -47,7 +37,7 @@ $(document).ready(function(){
 	<div class="row">
 
 	
-		<div id="profileHeaderDynamic" class="small-3 columns">
+		<div id="profileHeaderDynamic" class="small-5 columns">
 		<div id="avatar" style="background-image:url('<?php echo $loggedInUser->avatar; ?>');">
 
 			</div>
@@ -72,52 +62,41 @@ $(document).ready(function(){
 
 			
 		</div>
-		<div class="small-9 columns tileBottom">
-		<div class="tiles">
-		
-		<div class="tileContainer">
-	
+		<div class="small-7 columns tileBottom">
+			<div class="tiles">
+				<div class="tileContainer">
+					<!-- Tile -->
+					<div class="tile small-3" data-href="nutrition">
+						<i class="fa fa-times delete"></i>
+						<i class="fa fa-pencil edit"></i>
+						<i class="tileIcon fa fa-heartbeat"></i>
+						<span class="tileTitle">My Nutrition</span>
+					</div>
 
-	<!-- Tile -->
-	
+					<!-- Tile -->
+					<div class="tile small-3" data-href="history">
+						<i class="fa fa-times delete"></i>
+						<i class="fa fa-pencil edit"></i>
+						<i class="tileIcon fa fa-calendar"></i>
+						<span class="tileTitle">History</span>
+					</div>
 
-			<!-- Tile -->
-		<span class="tile wide" data-href="nutrition">
-		<span class="delete">
-		&times;</span>
-		<span class="edit">
-		<span class="fa fa-pencil">
+					<!-- Tile -->
+					<div class="tile small-3" data-href="settings">
+						<i class="fa fa-times delete"></i>
+						<i class="fa fa-pencil edit"></i>
+						<i class="tileIcon fa fa-user"></i>
+						<span class="tileTitle">Profile</span>
+					</div>
 
-		</span>
-		</span>
-		<i class="tileIcon fa fa-heartbeat"></i>
-		<span class="tileTitle">My Nutrition</span></span>
+					<!-- Tile -->
+					<div class="tile small-3" data-href="research">
+						<i class="fa fa-times delete"></i>
+						<i class="fa fa-pencil edit"></i>
+						<i class="tileIcon fa fa-user"></i>
+						<span class="tileTitle">Research</span>
+					</div>
 
-			<!-- Tile -->
-		<span class="tile wide" data-href="history">
-		<span class="delete">
-		&times;</span>
-		<span class="edit">
-		<span class="fa fa-pencil">
-
-		</span>
-		</span>
-		<i class="tileIcon fa fa-calendar"></i>
-		<span class="tileTitle">History</span></span>
-
-		<!-- Tile -->
-		<span class="tile wide" data-href="settings">
-		<span class="delete">
-		&times;</span>
-		<span class="edit">
-		<span class="fa fa-pencil">
-
-		</span>
-		</span>
-		<span class="tileIcon fa fa-user"> </span>
-		<span class="tileTitle">Profile</span></span>
-
-			<!-- Tile -->
 		<!--<span class="tile wide success" data-href="activities">
 		<span class="delete">
 		&times;</span>
@@ -128,21 +107,7 @@ $(document).ready(function(){
 		</span>
 		<span class="tileIcon fa fa-bicycle"> </span>
 		<span class="tileTitle">My Activities</span></span>-->
-
-		
-
-			<!-- Tile -->
-		<span class="tile wide" data-href="research">
-		<span class="delete">
-		&times;</span>
-		<span class="edit">
-		<span class="fa fa-pencil">
-
-		</span>
-		</span>
-		<i class="tileIcon fa fa-search"></i>
-		<span class="tileTitle">Research</span></span>
-		
+	
 
 
 		<?php if($loggedInUser->accountType == 'coach'){
@@ -202,28 +167,28 @@ $(document).ready(function(){
 	</div>
 </div>
 <div class="row contentRow">
-<div class="small-10 columns">
-<div class="row profilePage">
+	<div class="small-10 small-centered columns">
+		<div class="row profilePage">
 
-	</div>
+		</div>
 	</div>
 
-	<div class="small-3 columns">
-	<div class="shakebotProducts">
-	<ul class="shakebot-products-footer">
-					<li><a ui-sref="products" href="#/products"><img src="img/shopping-placeholder.jpg" class="footer-img">
-					<span class="footer-link">Shakebot Product 1<br>
-					$24.99</span></a>
-					</li>
-					<li><a ui-sref="products" href="#/products"><img src="img/shopping-placeholder.jpg" class="footer-img">
-					<span class="footer-link">Shakebot Product 2<br>
-					$24.99</span></a>
-					</li>
-					<li class="recommended"><a ui-sref="products" href="#/products"><img src="img/shopping-placeholder.jpg" class="footer-img">
-					<span class="footer-link">Shakebot Product 3<br>
-					$24.99</span></a>
-					</li>
-					</ul>
-	</div>
-	</div>
-	</div>
+<!-- 	<div class="small-3 columns">
+		<div class="shakebotProducts">
+			<ul class="shakebot-products-footer">
+				<li>
+					<a ui-sref="products" href="#/products"><img src="img/shopping-placeholder.jpg" class="footer-img">
+					<span class="footer-link">Shakebot Product 1<br>$24.99</span></a>
+				</li>
+				<li>
+					<a ui-sref="products" href="#/products"><img src="img/shopping-placeholder.jpg" class="footer-img">
+					<span class="footer-link">Shakebot Product 2<br>$24.99</span></a>
+				</li>
+				<li class="recommended">
+					<a ui-sref="products" href="#/products"><img src="img/shopping-placeholder.jpg" class="footer-img">
+					<span class="footer-link">Shakebot Product 3<br>$24.99</span></a>
+				</li>
+			</ul>
+		</div>
+	</div> -->
+</div>
