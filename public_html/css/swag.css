@@ -1215,6 +1215,14 @@ border: 1px solid #ddd;
 
 /* ##################     Bryan's CSS EDITS    ###################  */
 
+/* HEADER AND NAVI */
+#navigation {
+	margin-top: 5em;
+}
+
+.clear {
+	clear: both;
+}
 
 p.disclaimer {
 	font-weight: 300;
@@ -1232,4 +1240,22 @@ p.disclaimer {
 
 
 
+
+/*   NAVIGATIONAL TILES  */
+
+#nutrition.active {
+	color: red;
+}
+
+#research.active {
+	color: #000;
+}
+
+#history.active {
+	color: blue;
+}
+
+#settings.active {
+	color: orange;
+}
 
