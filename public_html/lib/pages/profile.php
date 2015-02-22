@@ -6,9 +6,28 @@ require '../classes/classes.php'; ?>
 <script>
 $(document).ready(function(){
 
-
-
 	var subpage = location.hash.split('/');
+
+	$(document).on("click", "#nutrition.tile", function() {
+		activetile = "nutrition";
+		$('.tile').removeClass("active");
+		$("#nutrition.tile").addClass("active");
+	});
+	$(document).on("click", "#research.tile", function() {
+		activetile = "research";
+		$('.tile').removeClass("active");
+		$("#research.tile").addClass("active");
+	});
+	$(document).on("click", "#settings.tile", function() {
+		activetile = "settings";
+		$('.tile').removeClass("active");
+		$("#settings.tile").addClass("active");
+	});
+	$(document).on("click", "#history.tile", function() {
+		activetile = "history";
+		$('.tile').removeClass("active");
+		$("#history.tile").addClass("active");
+	});
 
 
 	$(document).on('click', '.delete', function(){
@@ -66,7 +85,7 @@ $(document).ready(function(){
 			<div class="tiles">
 				<div class="tileContainer">
 					<!-- Tile -->
-					<div class="tile small-3" data-href="nutrition">
+					<div id="nutrition" class="tile small-3" data-href="nutrition">
 						<i class="fa fa-times delete"></i>
 						<i class="fa fa-pencil edit"></i>
 						<i class="tileIcon fa fa-heartbeat"></i>
@@ -74,7 +93,7 @@ $(document).ready(function(){
 					</div>
 
 					<!-- Tile -->
-					<div class="tile small-3" data-href="history">
+					<div id="history" class="tile small-3" data-href="history">
 						<i class="fa fa-times delete"></i>
 						<i class="fa fa-pencil edit"></i>
 						<i class="tileIcon fa fa-calendar"></i>
@@ -82,7 +101,7 @@ $(document).ready(function(){
 					</div>
 
 					<!-- Tile -->
-					<div class="tile small-3" data-href="settings">
+					<div id="settings" class="tile small-3" data-href="settings">
 						<i class="fa fa-times delete"></i>
 						<i class="fa fa-pencil edit"></i>
 						<i class="tileIcon fa fa-user"></i>
@@ -90,43 +109,25 @@ $(document).ready(function(){
 					</div>
 
 					<!-- Tile -->
-					<div class="tile small-3" data-href="research">
+					<div id="research" class="tile small-3" data-href="research">
 						<i class="fa fa-times delete"></i>
 						<i class="fa fa-pencil edit"></i>
 						<i class="tileIcon fa fa-user"></i>
 						<span class="tileTitle">Research</span>
 					</div>
+				</div>
 
-		<!--<span class="tile wide success" data-href="activities">
-		<span class="delete">
-		&times;</span>
-		<span class="edit">
-		<span class="fa fa-pencil">
-
-		</span>
-		</span>
-		<span class="tileIcon fa fa-bicycle"> </span>
-		<span class="tileTitle">My Activities</span></span>-->
-	
+				<?php if($loggedInUser->accountType == 'coach'){ ?>
+					<span class="tile" data-href="settings">
+						<span class="delete">&times;</span>
+							<span class="edit"><span class="fa fa-pencil"></span></span>
+							<i class="tileIcon fa fa-th"></i>
+						<span class="tileTitle">Coach View</span>
+					</span>
+				<?php } ?>
 
 
-		<?php if($loggedInUser->accountType == 'coach'){
-			?>
-<span class="tile" data-href="settings">
-		<span class="delete">
-		&times;</span>
-		<span class="edit">
-		<span class="fa fa-pencil">
-
-		</span>
-		</span>
-		<i class="tileIcon fa fa-th"></i>
-		<span class="tileTitle">Coach View</span></span>
-			<?php
-		} ?>
-
-
-		</div>
+			</div>
 		</div>
 		<div class="controlButtons">
 <div class="coverFormContainer">

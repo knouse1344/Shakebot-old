@@ -211,7 +211,7 @@ transition:none;
 
 }
 
-.tile:hover .tileIcon, .tile:hover .tileTitle {
+.tile:hover, .tile:hover {
 	color: #333;
 }
 
@@ -753,7 +753,6 @@ display:none;
 }
 
 .tileBottom {
-	
 }
 
 #rightclick {
@@ -961,22 +960,28 @@ border-bottom: 1px solid #ddd;
 	
 }
 
-.row.subnav {
-position: fixed;
-width: 100vw;
-background: #DDD;
-margin: 0;
-z-index: 10;
-margin-top: 1;
+.subnav {
+	border-top: 2px solid #ddd;
+	z-index: 10;
+	margin-top: 1em;
 }
 
 .subnav ul {
 	list-style:none;
+	margin: 0;
 }
 
 .subnav ul li {
 	float: left;
+}
 
+.subnav ul li a {
+	display: block;
+	padding: .75em 1.5em;
+}
+
+.subnav ul li:first-child a {
+	padding-left: 0;
 }
 
 button.button {
@@ -1003,15 +1008,9 @@ border: 1px solid #298638 !important;
 border: 1px solid #298638;
 }
 
-.subnav ul li a {
-	padding: 10px 20px !important;
-	display: block;
-}
-
 .subnav ul li a.active {
 	border-bottom: 2px solid #87AADF;
-display: block;
-
+	display: block;
 }
 
 .left-small {
@@ -1258,4 +1257,5 @@ p.disclaimer {
 #settings.active {
 	color: orange;
 }
+
 

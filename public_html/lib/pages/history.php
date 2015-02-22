@@ -524,10 +524,19 @@ $(document).ready(function(){
 });
 
 	$(document).ready(function(){
-
-		
-
-	
+    if ($(activetile == "nutrition")) {
+      $(tiles).removeClass("active");
+      $(tile_nut).addClass("active");
+    } else if ($(activetile == "history")) {
+      $(tiles).removeClass("active");
+      $(tile_his).addClass("active");
+    } else if ($(activetile == "settings")) {
+      $(tiles).removeClass("active");
+      $(tile_set).addClass("active");
+    } else if ($(activetile == "research")) {
+      $(tiles).removeClass("active");
+      $(tile_set).addClass("active");
+    };	
 	});
 </script>
 <div class="row subnav">

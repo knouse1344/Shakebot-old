@@ -15,6 +15,20 @@ require '../classes/classes.php'; ?>
 		$('.dailyNeeds').hide();
 		$('.postWorkout').hide();
 
+		if ($(activetile == "nutrition")) {
+	      $(tiles).removeClass("active");
+	      $(tile_nut).addClass("active");
+	    } else if ($(activetile == "history")) {
+	      $(tiles).removeClass("active");
+	      $(tile_his).addClass("active");
+	    } else if ($(activetile == "settings")) {
+	      $(tiles).removeClass("active");
+	      $(tile_set).addClass("active");
+	    } else if ($(activetile == "research")) {
+	      $(tiles).removeClass("active");
+	      $(tile_set).addClass("active");
+	    };	
+
 		$(document).on('click', '.btnSave', function(){
 			var fatreq = $('.dailyfatReq').html();
 			var proreq = $('.dailyproReq').html();

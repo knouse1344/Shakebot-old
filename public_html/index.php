@@ -149,6 +149,9 @@ error_reporting(0);
 		<script src="/js/rothfuss.js" type="text/javascript"></script> 
 		
 		<script type="text/javascript">
+
+		var activetile = '';
+
 		function closeAlert(){
 					$('#alertBox').fadeOut('fast');
 				}
@@ -167,10 +170,6 @@ error_reporting(0);
 				}
 				
 			$(document).ready(function(){
-
-				
-
-				
 
 				function buildPageContent(content){
 					$('.profilePage').html(content);
