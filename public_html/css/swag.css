@@ -187,6 +187,7 @@ transition:none;
 	border: 2px solid transparent;
 	overflow: hidden;
 	float:left;
+	cursor: pointer;
 }
 
 
@@ -393,12 +394,13 @@ float:left;
 margin-right: 10px;
 }
 
-.cover-photo h2 {
+h2.name {
 	font-size: 22px;
 	position: relative;
 	display: inline;
 	color: #000;
-	font-weight: bold;
+	font-weight: 700;
+	font-style: italic;
 }
 
 .avatar-container {
@@ -753,6 +755,21 @@ display:none;
 }
 
 .tileBottom {
+	padding-right: 0;
+}
+
+.recommendedProducts {
+
+}
+
+.recommendedProducts h4 {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.recommendedProducts p {
+	margin: 0;
 }
 
 #rightclick {
@@ -798,7 +815,7 @@ margin-bottom: -65px;
 }
 
 .profilePage {
-	margin: 0px 20px;
+	margin: 0;
 }
 
 .shakebotProducts {
@@ -856,13 +873,12 @@ font-size: 14px;
 
 .rowFull {
 	max-width:100%;
-	position: fixed;
-z-index: 1;
-margin-top: 44px;
+	z-index: 1;
+	margin-top: 44px;
 }
 
 .contentRow {
-	padding-top: 171px;
+	padding-top: 20px;
 }
 
 .top-bar-section ul li {
@@ -896,8 +912,11 @@ height: 128px;
 }
 
 .headerActivities {
-	margin-left: 130px;
 	color: #000;
+}
+
+p.headerActivities {
+	margin-bottom: 0;
 }
 
 .fullLogo {
@@ -1054,7 +1073,7 @@ width: 100vw;
 
 #settings-form select {
 	border: 0px;
-background-color: transparent;
+	background-color: transparent;
 }
 
 .labelPaddingTop {
@@ -1063,41 +1082,57 @@ background-color: transparent;
 
 #settings-form input, #settings-form select {
 	background-color: transparent;
-border: 0px;
-box-shadow: none;
-border-bottom: 1px solid #82BBEA;
+	border: 0px;
+	box-shadow: none;
+	border-bottom: 1px solid #82BBEA;
 }
 
 #settings-form select:focus {
 	outline: 0px;
 }
 
-.pricing-table {
-border: 1px solid #aaa;
-color: #222 !important;
+.stats-input {
+	color: #222 !important;
+	padding: 1em 1em 1em 0;
 }
 
-.pricing-table .title {
-color: #000;
-font-family: inherit;
-background: #4FAEF4;
+.stats-input .title {
+	color: #000;
+	font-family: inherit;
+	background: #4FAEF4;
+
 }
 
-.pricing-table .bullet-item {
-text-align: left;
-/* background-color: rgba(207, 167, 13, 0); */
-color: #000;
-/* border-top: 1px solid #20AAFF; */
-/* border-bottom: 1px solid #0076BE; */
-/* text-shadow: 2px 2px 0px #0076BE; */
-font-size: 16px;
-/* background: linear-gradient(#E0C040,#D7AE0D); */
-background: transparent;
+.stats-input p {
+	margin-bottom: 0;
+}
+
+.stats-input label {
+	margin-top: 1em;
+}
+
+.profilePage .title {
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	border-bottom: 2px solid red;
+}
+
+.stats-input .bullet-item {
+	text-align: left;
+	/* background-color: rgba(207, 167, 13, 0); */
+	color: #000;
+	/* border-top: 1px solid #20AAFF; */
+	/* border-bottom: 1px solid #0076BE; */
+	/* text-shadow: 2px 2px 0px #0076BE; */
+	font-size: 16px;
+	/* background: linear-gradient(#E0C040,#D7AE0D); */
+	background: transparent;
 }
 
 #weightHistory {
 	width: 100%;
-height: 300px;
+	height: 300px;
 }
 
 .noMargin {
@@ -1133,7 +1168,7 @@ li.bullet-item span:before {
 	border:1px solid #000; 
 }
 
-.pricing-table input {
+.stats-input input {
 color: #000;
 border: none;
 }

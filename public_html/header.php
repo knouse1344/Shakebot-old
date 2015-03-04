@@ -11,7 +11,7 @@ session_start();
 	<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
 	<link rel="stylesheet" href="css/swag.css" type="text/css" />
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,300,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,300,700italic' rel='stylesheet' type='text/css'>
 	<!-- Javascripts -->
 	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
 

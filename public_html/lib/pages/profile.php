@@ -3,6 +3,7 @@
 require '../../config.php';  
 require '../functions/functions.php';
 require '../classes/classes.php'; ?>
+
 <script>
 $(document).ready(function(){
 
@@ -31,10 +32,6 @@ $(document).ready(function(){
 
 
 	$(document).on('click', '#calculate', function(){
-		
-		$('.small-8').hide();
-		$('.postWorkout').fadeIn('fast');
-		$('.subnav ul li a').removeClass('active');
 		$('.postBtn').addClass('active');
 
 		$('.btnSave').removeClass('disabled');
@@ -76,85 +73,86 @@ $(document).ready(function(){
 			$('.dailycarbReq').html(dcarb + 'g');
 			$('.dailybcaaReq').html(dbcaa + 'g');
 			$('.dailycalReq').html(dcal + ' calories');
-		} else if($('option:selected').val() == 'Endurance'){
+		} 
+		// else if($('option:selected').val() == 'Endurance'){
 			
-			var weight = $('input[name=weight]').val();
+		// 	var weight = $('input[name=weight]').val();
 			
-			var fat = weight * 0.01;
-			var pro = weight * 0.3;
-			var carb = weight * 1.2;
-			var bcaa = weight * 0.05;
-			var cal = (pro * 4) + (fat * 9) + (carb * 4);
+		// 	var fat = weight * 0.01;
+		// 	var pro = weight * 0.3;
+		// 	var carb = weight * 1.2;
+		// 	var bcaa = weight * 0.05;
+		// 	var cal = (pro * 4) + (fat * 9) + (carb * 4);
 
-			var dfat = (weight * 0.3) + ((6.9 * duration * weight * 0.1) / 9);
-			var dpro = (weight * 1.4) + ((6.9 * duration * weight * 0.2) / 4);
-			var dcarb = (weight * 7) + ((6.9 * duration * weight * 0.7) / 4);
-			var dbcaa = weight * 0.1;
-			var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
+		// 	var dfat = (weight * 0.3) + ((6.9 * duration * weight * 0.1) / 9);
+		// 	var dpro = (weight * 1.4) + ((6.9 * duration * weight * 0.2) / 4);
+		// 	var dcarb = (weight * 7) + ((6.9 * duration * weight * 0.7) / 4);
+		// 	var dbcaa = weight * 0.1;
+		// 	var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
 
-			var fat = Math.round(fat);
-			var pro = Math.round(pro);
-			var carb = Math.round(carb);
-			var bcaa = Math.round(bcaa);
-			var cal = Math.round(cal);
-			var dfat = Math.round(dfat);
-			var dpro = Math.round(dpro); 
-			var dcarb = Math.round(dcarb);
-			var dbcaa = Math.round(dbcaa);
-			var dcal = Math.round(dcal);
+		// 	var fat = Math.round(fat);
+		// 	var pro = Math.round(pro);
+		// 	var carb = Math.round(carb);
+		// 	var bcaa = Math.round(bcaa);
+		// 	var cal = Math.round(cal);
+		// 	var dfat = Math.round(dfat);
+		// 	var dpro = Math.round(dpro); 
+		// 	var dcarb = Math.round(dcarb);
+		// 	var dbcaa = Math.round(dbcaa);
+		// 	var dcal = Math.round(dcal);
 
-			$('.fatReq').html(fat + 'g');
-			$('.proReq').html(pro + 'g');
-			$('.carbReq').html(carb + 'g');
-			$('.bcaaReq').html(bcaa + 'g');
-			$('.calReq').html(cal + ' calories');
+		// 	$('.fatReq').html(fat + 'g');
+		// 	$('.proReq').html(pro + 'g');
+		// 	$('.carbReq').html(carb + 'g');
+		// 	$('.bcaaReq').html(bcaa + 'g');
+		// 	$('.calReq').html(cal + ' calories');
 
 
-			$('.dailyfatReq').html(dfat + 'g');
-			$('.dailyproReq').html(dpro + 'g');
-			$('.dailycarbReq').html(dcarb + 'g');
-			$('.dailybcaaReq').html(dbcaa + 'g');
-			$('.dailycalReq').html(dcal + ' calories');
-		} else if($('option:selected').val() == 'Skill'){
+		// 	$('.dailyfatReq').html(dfat + 'g');
+		// 	$('.dailyproReq').html(dpro + 'g');
+		// 	$('.dailycarbReq').html(dcarb + 'g');
+		// 	$('.dailybcaaReq').html(dbcaa + 'g');
+		// 	$('.dailycalReq').html(dcal + ' calories');
+		// } else if($('option:selected').val() == 'Skill'){
 
-			var weight = $('input[name=weight]').val();
+		// 	var weight = $('input[name=weight]').val();
 			
-			var fat = weight * 0.01;
-			var pro = weight * 0.3;
-			var carb = weight * 0.3;
-			var bcaa = weight * 0.05;
-			var cal = (pro * 4) + (fat * 9) + (carb * 4);
+		// 	var fat = weight * 0.01;
+		// 	var pro = weight * 0.3;
+		// 	var carb = weight * 0.3;
+		// 	var bcaa = weight * 0.05;
+		// 	var cal = (pro * 4) + (fat * 9) + (carb * 4);
 
-			var dfat = (weight * 0.3) + ((5.17 * duration * weight * 0.2) / 9);
-			var dpro = (weight * 1.8) + ((5.17 * duration * weight * 0.3) / 4);
-			var dcarb = (weight * 5) + ((5.17 * duration * weight * 0.5) / 4);
-			var dbcaa = weight * 0.1;
-			var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
+		// 	var dfat = (weight * 0.3) + ((5.17 * duration * weight * 0.2) / 9);
+		// 	var dpro = (weight * 1.8) + ((5.17 * duration * weight * 0.3) / 4);
+		// 	var dcarb = (weight * 5) + ((5.17 * duration * weight * 0.5) / 4);
+		// 	var dbcaa = weight * 0.1;
+		// 	var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
 
-			var fat = Math.round(fat);
-			var pro = Math.round(pro);
-			var carb = Math.round(carb);
-			var bcaa = Math.round(bcaa);
-			var cal = Math.round(cal);
-			var dfat = Math.round(dfat);
-			var dpro = Math.round(dpro); 
-			var dcarb = Math.round(dcarb);
-			var dbcaa = Math.round(dbcaa);
-			var dcal = Math.round(dcal);
+		// 	var fat = Math.round(fat);
+		// 	var pro = Math.round(pro);
+		// 	var carb = Math.round(carb);
+		// 	var bcaa = Math.round(bcaa);
+		// 	var cal = Math.round(cal);
+		// 	var dfat = Math.round(dfat);
+		// 	var dpro = Math.round(dpro); 
+		// 	var dcarb = Math.round(dcarb);
+		// 	var dbcaa = Math.round(dbcaa);
+		// 	var dcal = Math.round(dcal);
 
-			$('.fatReq').html(fat + 'g');
-			$('.proReq').html(pro + 'g');
-			$('.carbReq').html(carb + 'g');
-			$('.bcaaReq').html(bcaa + 'g');
-			$('.calReq').html(cal + ' calories');
+		// 	$('.fatReq').html(fat + 'g');
+		// 	$('.proReq').html(pro + 'g');
+		// 	$('.carbReq').html(carb + 'g');
+		// 	$('.bcaaReq').html(bcaa + 'g');
+		// 	$('.calReq').html(cal + ' calories');
 
 			
-			$('.dailyfatReq').html(dfat + 'g');
-			$('.dailyproReq').html(dpro + 'g');
-			$('.dailycarbReq').html(dcarb + 'g');
-			$('.dailybcaaReq').html(dbcaa + 'g');
-			$('.dailycalReq').html(dcal + ' calories');
-		}
+		// 	$('.dailyfatReq').html(dfat + 'g');
+		// 	$('.dailyproReq').html(dpro + 'g');
+		// 	$('.dailycarbReq').html(dcarb + 'g');
+		// 	$('.dailybcaaReq').html(dbcaa + 'g');
+		// 	$('.dailycalReq').html(dcal + ' calories');
+		// }
 	});
 
 	$(document).on('click', '.btnSave', function(){
@@ -216,34 +214,40 @@ $(document).ready(function(){
 </script>
 
 <div class="row rowFull">
-	<div class="small-10 small-centered columns cover-photo">
+	<div class="small-10 small-centered columns">
 	
 	
 	<div class="row">
 
 	
 		<div id="profileHeaderDynamic" class="small-5 columns">
-		<div id="avatar" style="background-image:url('<?php echo $loggedInUser->avatar; ?>');">
+			<div class="row">
+				<div class="small-5 columns">
+					<div id="avatar" style="background-image:url('<?php echo $loggedInUser->avatar; ?>');"></div>
+				</div>
+				<div class="small-7 columns">
+					<h2 class="name"><?php echo $loggedInUser->fullname; ?></h2>
+					<p class="headerActivities">
+						<?php if($loggedInUser->dispAct == 'Display'){
+							?>
+							<b>Primary Activity:</b><br><?php echo ''.$loggedInUser->activity; ?>
+							<?php } ?><br>
 
+							<?php if($loggedInUser->dispHeight == 'Display'){
+							?>
+							<div style="display: inline-block;">
+								<b>Height:</b><br> <?php echo $loggedInUser->heightfeet; ?>
+								<br />
+							</div>
+							<?php } ?>
+							
+							<?php if($loggedInUser->dispWeight == 'Display'){
+							?>
+							<div style="display: inline-block; margin-left: 2em;"><b>Weight:</b><br><?php echo $loggedInUser->weight . ' ' . $loggedInUser->weighttype; ?></div>
+						<?php } ?>
+					</p>
+				</div>
 			</div>
-			<h2><?php echo $loggedInUser->fullname; ?></h2>
-			<p class="headerActivities">
-			<?php if($loggedInUser->dispAct == 'Display'){
-				?>
-				<b>Primary Activity:</b><br><?php echo ''.$loggedInUser->activity; ?>
-				<?php } ?>
-
-				<?php if($loggedInUser->dispHeight == 'Display'){
-				?>
-				<b>Height:</b><br> <?php echo $loggedInUser->heightfeet; ?>
-				<br />
-				<?php } ?>
-
-				<?php if($loggedInUser->dispWeight == 'Display'){
-				?>
-				<b>Weight:</b><br><?php echo $loggedInUser->weight . ' ' . $loggedInUser->weighttype; ?>
-<?php } ?>
-		</p>
 
 			
 		</div>
@@ -252,32 +256,32 @@ $(document).ready(function(){
 				<div class="tileContainer">
 					<!-- Tile -->
 					<div id="nutrition" class="tile small-3" data-href="nutrition">
-						<i class="fa fa-times delete"></i>
-						<i class="fa fa-pencil edit"></i>
+						<!-- <i class="fa fa-times delete"></i>
+						<i class="fa fa-pencil edit"></i> -->
 						<i class="tileIcon fa fa-heartbeat"></i>
 						<span class="tileTitle">My Nutrition</span>
 					</div>
 
 					<!-- Tile -->
 					<div id="history" class="tile small-3" data-href="history">
-						<i class="fa fa-times delete"></i>
-						<i class="fa fa-pencil edit"></i>
+						<!-- <i class="fa fa-times delete"></i>
+						<i class="fa fa-pencil edit"></i> -->
 						<i class="tileIcon fa fa-calendar"></i>
 						<span class="tileTitle">History</span>
 					</div>
 
 					<!-- Tile -->
 					<div id="settings" class="tile small-3" data-href="settings">
-						<i class="fa fa-times delete"></i>
-						<i class="fa fa-pencil edit"></i>
+						<!-- <i class="fa fa-times delete"></i>
+						<i class="fa fa-pencil edit"></i> -->
 						<i class="tileIcon fa fa-user"></i>
 						<span class="tileTitle">Profile</span>
 					</div>
 
 					<!-- Tile -->
 					<div id="research" class="tile small-3" data-href="research">
-						<i class="fa fa-times delete"></i>
-						<i class="fa fa-pencil edit"></i>
+						<!-- <i class="fa fa-times delete"></i>
+						<i class="fa fa-pencil edit"></i> -->
 						<i class="tileIcon fa fa-user"></i>
 						<span class="tileTitle">Research</span>
 					</div>
@@ -335,7 +339,7 @@ $(document).ready(function(){
 </div>
 <div class="row contentRow">
 	<div class="small-10 small-centered columns">
-		<div class="row profilePage">
+		<div class="profilePage">
 
 		</div>
 	</div>

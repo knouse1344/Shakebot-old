@@ -54,128 +54,122 @@ $('.small-12 h1').html($(this).html());
 		});
 
 		$(document).on('click', '#calculate', function(){
-			
-		
-			$('.small-8').hide();
-			$('.postWorkout').fadeIn('fast');
-			$('.subnav ul li a').removeClass('active');
 			$('.postBtn').addClass('active');
-
 			$('.btnSave').removeClass('disabled');
 			var duration = $('input[name=hours]').val();
 			if($('option:selected').val() == 'Repeated High Intensity'){
-			var weight = $('input[name=weight]').val();
+				var weight = $('input[name=weight]').val();
+				
+				var fat = weight * 0.01;
+				var pro = weight * 0.3;
+				var carb = weight * 0.8;
+				var bcaa = weight * 0.05;
+				var cal = (pro * 4) + (fat * 9) + (carb * 4);
+				var dfat = (weight * 0.3) + ((8.62 * duration * weight * 0.15) / 9);
+				var dpro = (weight * 1.6) + ((8.62 * duration * weight * 0.25) / 4);
+				var dcarb = (weight * 5) + ((8.62 * duration * weight * 0.6) / 4);
+				var dbcaa = weight * 0.1;
+				var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
+
+				var fat = Math.round(fat);
+				var pro = Math.round(pro);
+				var carb = Math.round(carb);
+				var bcaa = Math.round(bcaa);
+				var cal = Math.round(cal);
+				var dfat = Math.round(dfat);
+				var dpro = Math.round(dpro); 
+				var dcarb = Math.round(dcarb);
+				var dbcaa = Math.round(dbcaa);
+				var dcal = Math.round(dcal);
+
+				$('.fatReq').html(fat + 'g');
+				$('.proReq').html(pro + 'g');
+				$('.carbReq').html(carb + 'g');
+				$('.bcaaReq').html(bcaa + 'g');
+				$('.calReq').html(cal + ' calories');
+
+				$('.dailyfatReq').html(dfat + 'g');
+				$('.dailyproReq').html(dpro + 'g');
+				$('.dailycarbReq').html(dcarb + 'g');
+				$('.dailybcaaReq').html(dbcaa + 'g');
+				$('.dailycalReq').html(dcal + ' calories');
+			} else if($('option:selected').val() == 'Endurance'){
+				var weight = $('input[name=weight]').val();
 			
-			var fat = weight * 0.01;
-			var pro = weight * 0.3;
-			var carb = weight * 0.8;
-			var bcaa = weight * 0.05;
-			var cal = (pro * 4) + (fat * 9) + (carb * 4);
-			var dfat = (weight * 0.3) + ((8.62 * duration * weight * 0.15) / 9);
-			var dpro = (weight * 1.6) + ((8.62 * duration * weight * 0.25) / 4);
-			var dcarb = (weight * 5) + ((8.62 * duration * weight * 0.6) / 4);
-			var dbcaa = weight * 0.1;
-			var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
+				var fat = weight * 0.01;
+				var pro = weight * 0.3;
+				var carb = weight * 1.2;
+				var bcaa = weight * 0.05;
+				var cal = (pro * 4) + (fat * 9) + (carb * 4);
 
-			var fat = Math.round(fat);
-			var pro = Math.round(pro);
-			var carb = Math.round(carb);
-			var bcaa = Math.round(bcaa);
-			var cal = Math.round(cal);
-			var dfat = Math.round(dfat);
-			var dpro = Math.round(dpro); 
-			var dcarb = Math.round(dcarb);
-			var dbcaa = Math.round(dbcaa);
-			var dcal = Math.round(dcal);
+				var dfat = (weight * 0.3) + ((6.9 * duration * weight * 0.1) / 9);
+				var dpro = (weight * 1.4) + ((6.9 * duration * weight * 0.2) / 4);
+				var dcarb = (weight * 7) + ((6.9 * duration * weight * 0.7) / 4);
+				var dbcaa = weight * 0.1;
+				var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
 
-			$('.fatReq').html(fat + 'g');
-			$('.proReq').html(pro + 'g');
-			$('.carbReq').html(carb + 'g');
-			$('.bcaaReq').html(bcaa + 'g');
-			$('.calReq').html(cal + ' calories');
+				var fat = Math.round(fat);
+				var pro = Math.round(pro);
+				var carb = Math.round(carb);
+				var bcaa = Math.round(bcaa);
+				var cal = Math.round(cal);
+				var dfat = Math.round(dfat);
+				var dpro = Math.round(dpro); 
+				var dcarb = Math.round(dcarb);
+				var dbcaa = Math.round(dbcaa);
+				var dcal = Math.round(dcal);
 
-			$('.dailyfatReq').html(dfat + 'g');
-			$('.dailyproReq').html(dpro + 'g');
-			$('.dailycarbReq').html(dcarb + 'g');
-			$('.dailybcaaReq').html(dbcaa + 'g');
-			$('.dailycalReq').html(dcal + ' calories');
-}else if($('option:selected').val() == 'Endurance'){
-var weight = $('input[name=weight]').val();
+				$('.fatReq').html(fat + 'g');
+				$('.proReq').html(pro + 'g');
+				$('.carbReq').html(carb + 'g');
+				$('.bcaaReq').html(bcaa + 'g');
+				$('.calReq').html(cal + ' calories');
+
+
+				$('.dailyfatReq').html(dfat + 'g');
+				$('.dailyproReq').html(dpro + 'g');
+				$('.dailycarbReq').html(dcarb + 'g');
+				$('.dailybcaaReq').html(dbcaa + 'g');
+				$('.dailycalReq').html(dcal + ' calories');
+			} else if($('option:selected').val() == 'Skill'){
+				var weight = $('input[name=weight]').val();
 			
-			var fat = weight * 0.01;
-			var pro = weight * 0.3;
-			var carb = weight * 1.2;
-			var bcaa = weight * 0.05;
-			var cal = (pro * 4) + (fat * 9) + (carb * 4);
+				var fat = weight * 0.01;
+				var pro = weight * 0.3;
+				var carb = weight * 0.3;
+				var bcaa = weight * 0.05;
+				var cal = (pro * 4) + (fat * 9) + (carb * 4);
 
-			var dfat = (weight * 0.3) + ((6.9 * duration * weight * 0.1) / 9);
-			var dpro = (weight * 1.4) + ((6.9 * duration * weight * 0.2) / 4);
-			var dcarb = (weight * 7) + ((6.9 * duration * weight * 0.7) / 4);
-			var dbcaa = weight * 0.1;
-			var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
+				var dfat = (weight * 0.3) + ((5.17 * duration * weight * 0.2) / 9);
+				var dpro = (weight * 1.8) + ((5.17 * duration * weight * 0.3) / 4);
+				var dcarb = (weight * 5) + ((5.17 * duration * weight * 0.5) / 4);
+				var dbcaa = weight * 0.1;
+				var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
 
-			var fat = Math.round(fat);
-			var pro = Math.round(pro);
-			var carb = Math.round(carb);
-			var bcaa = Math.round(bcaa);
-			var cal = Math.round(cal);
-			var dfat = Math.round(dfat);
-			var dpro = Math.round(dpro); 
-			var dcarb = Math.round(dcarb);
-			var dbcaa = Math.round(dbcaa);
-			var dcal = Math.round(dcal);
+				var fat = Math.round(fat);
+				var pro = Math.round(pro);
+				var carb = Math.round(carb);
+				var bcaa = Math.round(bcaa);
+				var cal = Math.round(cal);
+				var dfat = Math.round(dfat);
+				var dpro = Math.round(dpro); 
+				var dcarb = Math.round(dcarb);
+				var dbcaa = Math.round(dbcaa);
+				var dcal = Math.round(dcal);
 
-			$('.fatReq').html(fat + 'g');
-			$('.proReq').html(pro + 'g');
-			$('.carbReq').html(carb + 'g');
-			$('.bcaaReq').html(bcaa + 'g');
-			$('.calReq').html(cal + ' calories');
+				$('.fatReq').html(fat + 'g');
+				$('.proReq').html(pro + 'g');
+				$('.carbReq').html(carb + 'g');
+				$('.bcaaReq').html(bcaa + 'g');
+				$('.calReq').html(cal + ' calories');
 
-
-			$('.dailyfatReq').html(dfat + 'g');
-			$('.dailyproReq').html(dpro + 'g');
-			$('.dailycarbReq').html(dcarb + 'g');
-			$('.dailybcaaReq').html(dbcaa + 'g');
-			$('.dailycalReq').html(dcal + ' calories');
-}else if($('option:selected').val() == 'Skill'){
-var weight = $('input[name=weight]').val();
-			
-			var fat = weight * 0.01;
-			var pro = weight * 0.3;
-			var carb = weight * 0.3;
-			var bcaa = weight * 0.05;
-			var cal = (pro * 4) + (fat * 9) + (carb * 4);
-
-			var dfat = (weight * 0.3) + ((5.17 * duration * weight * 0.2) / 9);
-			var dpro = (weight * 1.8) + ((5.17 * duration * weight * 0.3) / 4);
-			var dcarb = (weight * 5) + ((5.17 * duration * weight * 0.5) / 4);
-			var dbcaa = weight * 0.1;
-			var dcal = (dpro * 4) + (dfat * 9) + (dcarb * 4);
-
-			var fat = Math.round(fat);
-			var pro = Math.round(pro);
-			var carb = Math.round(carb);
-			var bcaa = Math.round(bcaa);
-			var cal = Math.round(cal);
-			var dfat = Math.round(dfat);
-			var dpro = Math.round(dpro); 
-			var dcarb = Math.round(dcarb);
-			var dbcaa = Math.round(dbcaa);
-			var dcal = Math.round(dcal);
-
-			$('.fatReq').html(fat + 'g');
-			$('.proReq').html(pro + 'g');
-			$('.carbReq').html(carb + 'g');
-			$('.bcaaReq').html(bcaa + 'g');
-			$('.calReq').html(cal + ' calories');
-
-			
-			$('.dailyfatReq').html(dfat + 'g');
-			$('.dailyproReq').html(dpro + 'g');
-			$('.dailycarbReq').html(dcarb + 'g');
-			$('.dailybcaaReq').html(dbcaa + 'g');
-			$('.dailycalReq').html(dcal + ' calories');
-}
+				
+				$('.dailyfatReq').html(dfat + 'g');
+				$('.dailyproReq').html(dpro + 'g');
+				$('.dailycarbReq').html(dcarb + 'g');
+				$('.dailybcaaReq').html(dbcaa + 'g');
+				$('.dailycalReq').html(dcal + ' calories');
+			}
 		});
 	});
 </script>
