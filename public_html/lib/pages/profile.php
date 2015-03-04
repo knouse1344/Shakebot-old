@@ -215,110 +215,101 @@ $(document).ready(function(){
 
 <div class="row rowFull">
 	<div class="small-10 small-centered columns">
-	
-	
-	<div class="row">
-
-	
-		<div id="profileHeaderDynamic" class="small-5 columns">
+		<div class="header-row">
 			<div class="row">
-				<div class="small-5 columns">
-					<div id="avatar" style="background-image:url('<?php echo $loggedInUser->avatar; ?>');"></div>
-				</div>
-				<div class="small-7 columns">
-					<h2 class="name"><?php echo $loggedInUser->fullname; ?></h2>
-					<p class="headerActivities">
-						<?php if($loggedInUser->dispAct == 'Display'){
-							?>
-							<b>Primary Activity:</b><br><?php echo ''.$loggedInUser->activity; ?>
-							<?php } ?><br>
+				<div id="profileHeaderDynamic" class="small-5 columns">
+					<div class="row">
+						<div class="avatar-container">
+							<div id="avatar" style="background-image:url('<?php echo $loggedInUser->avatar; ?>');"></div>
+						</div>
+						<div class="" style="float: left;">
+							<h2 class="name"><?php echo $loggedInUser->fullname; ?></h2>
+							<p class="headerActivities">
+								<?php if($loggedInUser->dispAct == 'Display'){
+									?>
+									<b>Primary Activity:</b><br><?php echo ''.$loggedInUser->activity; ?>
+									<?php } ?><br>
 
-							<?php if($loggedInUser->dispHeight == 'Display'){
-							?>
-							<div style="display: inline-block;">
-								<b>Height:</b><br> <?php echo $loggedInUser->heightfeet; ?>
-								<br />
+									<?php if($loggedInUser->dispHeight == 'Display'){
+									?>
+									<div style="display: inline-block; margin-right: 2em;">
+										<b>Height:</b><br> <?php echo $loggedInUser->heightfeet; ?>
+										<br />
+									</div>
+									<?php } ?>
+									
+									<?php if($loggedInUser->dispWeight == 'Display'){
+									?>
+									<div style="display: inline-block;"><b>Weight:</b><br><?php echo $loggedInUser->weight . ' ' . $loggedInUser->weighttype; ?></div>
+								<?php } ?>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="small-7 columns tileBottom">
+					<div class="tiles">
+						<div class="tileContainer">
+							<!-- Tile -->
+							<div id="nutrition" class="tile small-3" data-href="nutrition">
+								<!-- <i class="fa fa-times delete"></i>
+								<i class="fa fa-pencil edit"></i> -->
+								<i class="tileIcon fa fa-heartbeat"></i>
+								<span class="tileTitle">My Nutrition</span>
 							</div>
-							<?php } ?>
-							
-							<?php if($loggedInUser->dispWeight == 'Display'){
-							?>
-							<div style="display: inline-block; margin-left: 2em;"><b>Weight:</b><br><?php echo $loggedInUser->weight . ' ' . $loggedInUser->weighttype; ?></div>
+
+							<!-- Tile -->
+							<div id="history" class="tile small-3" data-href="history">
+								<!-- <i class="fa fa-times delete"></i>
+								<i class="fa fa-pencil edit"></i> -->
+								<i class="tileIcon fa fa-calendar"></i>
+								<span class="tileTitle">History</span>
+							</div>
+
+							<!-- Tile -->
+							<div id="settings" class="tile small-3" data-href="settings">
+								<!-- <i class="fa fa-times delete"></i>
+								<i class="fa fa-pencil edit"></i> -->
+								<i class="tileIcon fa fa-user"></i>
+								<span class="tileTitle">Profile</span>
+							</div>
+
+							<!-- Tile -->
+							<div id="research" class="tile small-3" data-href="research">
+								<!-- <i class="fa fa-times delete"></i>
+								<i class="fa fa-pencil edit"></i> -->
+								<i class="tileIcon fa fa-user"></i>
+								<span class="tileTitle">Research</span>
+							</div>
+						</div>
+
+						<?php if($loggedInUser->accountType == 'coach'){ ?>
+							<span class="tile" data-href="settings">
+								<span class="delete">&times;</span>
+									<span class="edit"><span class="fa fa-pencil"></span></span>
+									<i class="tileIcon fa fa-th"></i>
+								<span class="tileTitle">Coach View</span>
+							</span>
 						<?php } ?>
-					</p>
-				</div>
-			</div>
-
-			
-		</div>
-		<div class="small-7 columns tileBottom">
-			<div class="tiles">
-				<div class="tileContainer">
-					<!-- Tile -->
-					<div id="nutrition" class="tile small-3" data-href="nutrition">
-						<!-- <i class="fa fa-times delete"></i>
-						<i class="fa fa-pencil edit"></i> -->
-						<i class="tileIcon fa fa-heartbeat"></i>
-						<span class="tileTitle">My Nutrition</span>
-					</div>
-
-					<!-- Tile -->
-					<div id="history" class="tile small-3" data-href="history">
-						<!-- <i class="fa fa-times delete"></i>
-						<i class="fa fa-pencil edit"></i> -->
-						<i class="tileIcon fa fa-calendar"></i>
-						<span class="tileTitle">History</span>
-					</div>
-
-					<!-- Tile -->
-					<div id="settings" class="tile small-3" data-href="settings">
-						<!-- <i class="fa fa-times delete"></i>
-						<i class="fa fa-pencil edit"></i> -->
-						<i class="tileIcon fa fa-user"></i>
-						<span class="tileTitle">Profile</span>
-					</div>
-
-					<!-- Tile -->
-					<div id="research" class="tile small-3" data-href="research">
-						<!-- <i class="fa fa-times delete"></i>
-						<i class="fa fa-pencil edit"></i> -->
-						<i class="tileIcon fa fa-user"></i>
-						<span class="tileTitle">Research</span>
 					</div>
 				</div>
-
-				<?php if($loggedInUser->accountType == 'coach'){ ?>
-					<span class="tile" data-href="settings">
-						<span class="delete">&times;</span>
-							<span class="edit"><span class="fa fa-pencil"></span></span>
-							<i class="tileIcon fa fa-th"></i>
-						<span class="tileTitle">Coach View</span>
-					</span>
-				<?php } ?>
-
-
+				<div class="controlButtons">
+					<div class="coverFormContainer"><div id="fileuploader2">Change Background</div></div>
+					<div class="customizeButtons">
+						<button data-tooltip title="Add Tiles" class="addButton"><span class="fa fa-plus"> </span></button>
+						<button data-tooltip title="Remove Tiles" class="removeButton"><span class="fa fa-minus"> </span></button>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="controlButtons">
-<div class="coverFormContainer">
-	
-		<div id="fileuploader2">Change Background</div>
-		</div>
-
-		<div class="customizeButtons">
-<button data-tooltip title="Add Tiles" class="addButton"><span class="fa fa-plus"> </span></button>
-	<button data-tooltip title="Remove Tiles" class="removeButton"><span class="fa fa-minus"> </span></button>
-		</div>
-		</div>
-		</div>
-<!--
+	</div>
+</div>
+		<!--
 		<div class="small-9 columns">
 			<b>Height: </b><?php echo $loggedInUser->height; ?>"<br />
 			<b>Weight: </b><?php echo $loggedInUser->weight; ?> lbs<br />
 		</div>
 		-->
 
-	</div>
 	<!--
 	<div class="row profile-menu">
 		<ul class="profile-nav">
@@ -333,10 +324,6 @@ $(document).ready(function(){
 	</div>
 -->
 
-
-
-	</div>
-</div>
 <div class="row contentRow">
 	<div class="small-10 small-centered columns">
 		<div class="profilePage">

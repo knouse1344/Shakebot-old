@@ -28,8 +28,8 @@ require '../classes/classes.php'; ?>
 
 	});
 </script>
-<div class="">
-	
+<div class="row">
+
 	<div class="small-4 columns">
 		<h3 class="title">Your Activities</h3>
 		<form class="stats-input">
@@ -63,7 +63,7 @@ require '../classes/classes.php'; ?>
 			</div>
 			<div class="row">
 				<div class="large-12 columns">
-					<button class="button" id="calculate">Calculate</button><button class="button buttonSuccess btnSave disabled">Save</button>
+					<button class="button" id="calculate">Calculate</button><button class="button btnSave">Save</button>
 				</div>
 			</div>
 		</form>
@@ -71,7 +71,7 @@ require '../classes/classes.php'; ?>
 	
 	<div class="small-4 columns postWorkout nutritionView">
 		<h3 class="title">Nutritional Needs</h3>
-		<table class="pricing-table">
+		<table class="requirements-table">
 			<thead>
 				<tr>
 				  <th></th>
@@ -113,7 +113,7 @@ require '../classes/classes.php'; ?>
 		<h3 class="title">Recommended Product</h3>
 		<div class="row">
 			<div class="large-12 columns">
-				<div class="row" style="border-bottom: 1px solid #ccc; margin-bottom: 2em; margin-top: 2em;">
+				<div class="row product">
 					<div class="large-4 columns">
 						<img src="img/shakebot_recommendedproduct.png" />
 					</div>
@@ -122,44 +122,35 @@ require '../classes/classes.php'; ?>
 						<p>Protein: 18g</p>
 						<p>BCAA: 20g</p>
 						<p>Fast Acting</p>
+						<button class="purchase" id="recommended2">Buy Now</button>
 					</div>
 				</div>
-				<div class="row" style="border-bottom: 1px solid #ccc; margin-bottom: 2em;">
+				<div class="row product">
 					<div class="large-4 columns">
 						<img src="img/shakebot_recommendedproduct.png" />
 					</div>
 					<div class="large-8 columns">
-						<h4>Recommended Product 1</h4>
-						<p>Protein: 18g</p>
-						<p>BCAA: 20g</p>
+						<h4>Recommended Product 2</h4>
+						<p>Protein: 12g</p>
+						<p>BCAA: 16g</p>
 						<p>Fast Acting</p>
+						<button class="purchase" id="recommended2">Buy Now</button>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row product">
 					<div class="large-4 columns">
 						<img src="img/shakebot_recommendedproduct.png" />
 					</div>
 					<div class="large-8 columns">
-						<h4>Recommended Product 1</h4>
-						<p>Protein: 18g</p>
-						<p>BCAA: 20g</p>
+						<h4>Recommended Product 3</h4>
+						<p>Protein: 14g</p>
+						<p>BCAA: 26g</p>
 						<p>Fast Acting</p>
+						<button class="purchase" id="recommended3">Buy Now</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	
-	<!-- <div class="small-4 columns dailyNeeds nutritionView">
-		<h3 class="title">Daily Nutritional Needs</h3>
-		<ul class="pricing-table">
-			<li class="bullet-item">Calories: <span class="dailycalReq"> </span></li>
-			<li class="bullet-item">Fat: <span class="dailyfatReq"> </span></li>
-			<li class="bullet-item">Protein: <span class="dailyproReq"> </span></li>
-			<li class="bullet-item">Carbohydrates: <span class="dailycarbReq"> </span></li>
-			<li class="bullet-item">BCAA: <span class="dailybcaaReq"> </span></li>
-		</ul>
-	</div> -->
-	
-	</div>
 </div>
